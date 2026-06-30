@@ -90,30 +90,30 @@ class AladdinApiClient:
             )
 
             from_name = container.select_one("span.noti_from")
-            from_name = from_name.get_text(strip=True) if from_name else None
+            from_name = from_name.get_text(separator=" ", strip=True) if from_name else None
 
             preview_snip = container.select_one("span.noti_text_snip")
-            preview_snip = preview_snip.get_text(strip=True) if preview_snip else None
+            preview_snip = preview_snip.get_text(separator=" ", strip=True) if preview_snip else None
 
             timestamp = container.select_one("span.not_shorttime")
-            timestamp = timestamp.get_text(strip=True) if timestamp else None
+            timestamp = timestamp.get_text(separator=" ", strip=True) if timestamp else None
 
             full_text_div = container.select_one(
                 "div.noti_text_expanded div.text p"
             )
             full_text = (
-                full_text_div.get_text(strip=True) if full_text_div else None
+                full_text_div.get_text(separator=" ", strip=True) if full_text_div else None
             )
 
             to_span = container.select_one("span.noti_to")
-            to_val = to_span.get_text(strip=True) if to_span else None
+            to_val = to_span.get_text(separator=" ", strip=True) if to_span else None
 
             sent_p = container.select_one("p.not_fulltime")
             sent_time = None
             if sent_p:
                 b = sent_p.find("b")
                 if b:
-                    sent_time = b.get_text(strip=True).replace("Sent: ", "")
+                    sent_time = b.get_text(separator=" ", strip=True).replace("Sent: ", "")
 
             notifications.append({
                 "id": notif_id,
