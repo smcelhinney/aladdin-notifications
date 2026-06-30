@@ -1,0 +1,40 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aladdin Notifications",
+        "description": "Enter your Aladdin.ie credentials.",
+        "data": {
+          "username": "Username",
+          "password": "Password",
+          "school_id": "School ID"
+        }
+      },
+      "reauth": {
+        "title": "Reauthenticate Aladdin Notifications",
+        "description": "Your credentials are no longer valid. Please update them.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password",
+      "cannot_connect": "Could not connect to Aladdin.ie"
+    },
+    "abort": {
+      "reauth_successful": "Reauthentication was successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Aladdin Notifications Options",
+        "data": {
+          "scan_interval": "Update interval (seconds)"
+        }
+      }
+    }
+  }
+}
